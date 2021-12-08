@@ -8,8 +8,8 @@
       </div>
       <div class="tweet-card-content">
         <div class="tweet-card-content-info">
-          <span class="name">{{ tweet.User.name }}</span>
-          <span class="account">{{ tweet.User.account }}</span>
+          <span class="name">{{ tweet.User.name | nameLength}}</span>
+          <span class="account"><span>@</span>{{ tweet.User.account | nameLength }}</span>
           <span class="created-at">{{ tweet.createdAt | fromNow }}</span>
         </div>
         <router-link :to="{ name: 'tweets-detail', params: { id: tweet.id } }">
@@ -67,11 +67,11 @@
 <script>
 import tweetAPI from "../apis/tweet";
 import { Toast } from "../utils/helpers";
-import { emptyImageFilter, fromNowFilter } from "../utils/mixins";
+import { emptyImageFilter, fromNowFilter,nameLengthFilter } from "../utils/mixins"
 
 export default {
   name: "ShowPostsList",
-  mixins: [emptyImageFilter, fromNowFilter],
+  mixins: [emptyImageFilter, fromNowFilter,nameLengthFilter],
   props: {
     tweets: {
       type: Array,
@@ -113,9 +113,9 @@ export default {
         });
       }
     },
-		replyModalClick(tweetId) {
-			this.$emit('after-reply-modal-click',tweetId)
-		}
+    replyModalClick(tweetId) {
+      this.$emit("after-reply-modal-click", tweetId);
+    },
   },
 };
 </script>

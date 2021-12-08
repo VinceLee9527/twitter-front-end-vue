@@ -8,7 +8,7 @@
         />
       </router-link>
       <div class="page-title-name">
-        <div class="name">{{ user.name }}</div>
+        <div class="name">{{ user.name | nameLength}}</div>
         <div class="tweets">{{ userTweetsCount }}推文</div>
       </div>
     </div>
@@ -29,8 +29,8 @@
         </div>
         <div class="list-card-content">
           <div class="list-card-content-header">
-            <div class="name">{{ following.name }}</div>
-            <div class="account">{{ following.account }}</div>
+            <div class="name">{{ following.name | nameLength}}</div>
+            <div class="account"><span>@</span>{{ following.account | nameLength}}</div>
             <button
               class="list-card-button following"
               v-if="following.isFollowed"
@@ -62,11 +62,11 @@
 <script>
 import usersAPI from "../apis/users";
 import { Toast } from "../utils/helpers";
-import { emptyImageFilter } from "../utils/mixins";
+import { emptyImageFilter,nameLengthFilter } from "../utils/mixins";
 
 export default {
   name: "UserFollowingFeed",
-	mixins: [emptyImageFilter],
+	mixins: [emptyImageFilter,nameLengthFilter],
   props: ["followings", "userTweetsCount", "user"],
   data() {
     return {

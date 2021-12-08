@@ -28,8 +28,6 @@ export default {
         tweetId,
         comment
     }) {
-        console.log('後', tweetId,
-            comment)
         return apiHelper.post(`/tweets/${tweetId}/replies`, {
             comment: comment
         })

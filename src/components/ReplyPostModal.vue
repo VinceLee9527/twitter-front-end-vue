@@ -1,4 +1,5 @@
 <template>
+<<<<<<< HEAD
   <transition name="fade" appear>
     <div class="modal-container" v-show="openReplyPostModal">
       <div class="modal">
@@ -14,6 +15,29 @@
             <div class="modal-content-tweet-img">
               <img :src="tweet.User.avatar | emptyImage" alt="" />
               <span class="line"></span>
+=======
+  <div class="modal-container">
+    <div class="modal">
+      <div class="modal-header">
+        <img
+          src="../assets/images/close-icon.svg"
+          alt=""
+          @click.stop.prevent="closeModal"
+        />
+      </div>
+      <div class="modal-content">
+        <div class="modal-content-tweet">
+          <div class="modal-content-tweet-img">
+            <img :src="tweet.User.avatar | emptyImage" alt="" />
+            <span class="line"></span>
+          </div>
+          <div class="modal-content-info">
+            <div class="modal-content-info-name">
+              <span class="name">{{ tweet.User.name }}</span>
+							<span>@</span>
+              <span>{{ tweet.User.account }}</span>
+              <span> • {{ tweet.createdAt | fromNow }}</span>
+>>>>>>> main
             </div>
             <div class="modal-content-info">
               <div class="modal-content-info-name">
@@ -53,6 +77,24 @@
               回覆
             </button>
           </div>
+<<<<<<< HEAD
+=======
+          <textarea
+            class="modal-content-reply-input"
+            placeholder="推你的回覆"
+            v-model="inputText"
+          >
+          </textarea>
+          <span v-show="inputLengthError">字數不可超過140字</span>
+        </div>
+        <div class="modal-content-button">
+          <button
+            :disabled="inputLengthError || !inputText || isProcessing"
+            @click.stop.prevent="handleSubmit"
+          >
+            回覆
+          </button>
+>>>>>>> main
         </div>
       </div>
     </div>

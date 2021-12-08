@@ -18,13 +18,19 @@
 
 .form-group {
     position: relative;
+    margin: 30px 0;
+    .symbol {
+        position: absolute;
+        bottom: 3px;
+        left: 10px;
+    }
     &.input-error>input {
         border-bottom: 2px solid $error-red !important;
     }
     label {
         position: absolute;
-        top: 18px;
-        left: 20px;
+        top: 5px;
+        left: 5px;
         font-weight: 500;
         font-size: 14px;
         color: $input-bottom-color;
@@ -32,7 +38,6 @@
     input {
         width: 540px;
         height: 52px;
-        margin: 15px;
         border: none;
         border-bottom: 2px solid $input-bottom-color;
         border-radius: 4px 4px 0px 0px;
@@ -44,6 +49,9 @@
         &:focus {
             border-bottom: 2px solid $link-blue;
         }
+    }
+    #account {
+        padding: 1.75rem 0rem 0.5rem 28px;
     }
     .error-message {
         position: absolute;

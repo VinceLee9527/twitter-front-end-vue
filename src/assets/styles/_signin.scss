@@ -26,6 +26,7 @@
             flex-direction: column;
             justify-content: center;
             border-bottom: 2px solid $label-font-color;
+            border-radius: 0 0 4px 4px;
             .symbol {
                 position: absolute;
                 bottom: 3px;
@@ -71,6 +72,7 @@
                 font-size: 1.125rem;
                 font-family: $main-font;
                 color: $link-blue;
+                font-weight: 700;
                 margin-left: 1px;
                 &.text {
                     border-bottom: 2px solid $link-blue;

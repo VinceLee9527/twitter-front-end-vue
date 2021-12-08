@@ -5,7 +5,9 @@
       <NewPostForm @update-tweets="updateTweets" />
       <hr />
       <div class="showpostform-container">
+        <Spinner v-show="isLoading" />
         <ShowPostsList
+          v-show="!isLoading"
           :tweets="tweets"
           @update-tweets="updateTweets"
           @after-reply-modal-click="afterReplyModalClick"
@@ -36,6 +38,7 @@ import NewPostForm from "./../components/NewPostForm.vue";
 import ShowPostsList from "./../components/ShowPostsList.vue";
 import CreateNewTweetModal from "../components/CreateNewTweetModal.vue";
 import ReplyPostModal from "../components/ReplyPostModal.vue";
+import Spinner from "../components/Spinner.vue";
 import { mapState } from "vuex";
 import { Toast } from "../utils/helpers";
 import tweetAPI from "../apis/tweet";
@@ -49,11 +52,13 @@ export default {
     ShowPostsList,
     CreateNewTweetModal,
     ReplyPostModal,
+    Spinner,
   },
   data() {
     return {
       tweets: [],
-      modaltweet: {},
+      modaltweet: "",
+      isLoading: true,
     };
   },
   methods: {
@@ -65,7 +70,9 @@ export default {
       try {
         const response = await tweetAPI.getAllTweets();
         this.tweets = response.data;
+        this.isLoading = false;
       } catch {
+        this.isLoading = false;
         Toast.fire({
           icon: "warning",
           title: "無法取得推文資料，請稍後再試",

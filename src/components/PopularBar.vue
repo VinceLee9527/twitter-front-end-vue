@@ -2,9 +2,7 @@
   <div class="container">
     <ul class="list-container">
       <li class="list-header">Popular</li>
-      <!-- render users here -->
       <li v-for="user in users" :key="user.id" class="list-card">
-        <!-- router-link -->
         <div class="list-card-avatar">
           <router-link :to="{ name: 'tweet', params: { id: user.id } }">
             <img :src="user.avatar | emptyImage" alt="user-avatar" />
@@ -14,7 +12,7 @@
           <div class="list-card-content-name">
             {{ user.name | nameLength }}
           </div>
-          <div class="list-card-content-account">@{{ user.account }}</div>
+          <div class="list-card-content-account">@{{ user.account | nameLength}}</div>
         </div>
         <template v-if="user.id !== currentUser.id">
           <button

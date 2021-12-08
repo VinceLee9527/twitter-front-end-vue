@@ -60,7 +60,7 @@
           </a>
         </li>
         <li class="nav-list nav-list-logout">
-          <router-link to="/signin" class="nav-link">
+          <router-link to="/signin" class="nav-link ">
             <img
               class="nav-icon"
               src="../assets/images/logout-icon.svg"

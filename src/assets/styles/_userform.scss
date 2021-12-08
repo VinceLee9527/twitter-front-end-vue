@@ -15,6 +15,11 @@
 
 .form-group {
     position: relative;
+    .symbol {
+        position: absolute;
+        top: 38px;
+        left: 30px;
+    }
     &.input-error>input {
         border-bottom: 2px solid $error-red !important;
     }
@@ -42,6 +47,9 @@
             border-bottom: 2px solid $link-blue;
             box-shadow: inset 0 0 0 1000px $input-background-color;
         }
+    }
+    #account {
+        padding: 1.75rem 0rem 0.5rem 33px;
     }
     .error-message {
         position: absolute;

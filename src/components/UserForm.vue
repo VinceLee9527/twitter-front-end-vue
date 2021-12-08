@@ -5,6 +5,7 @@
       <form class="page-content-form" @submit.stop.prevent="handleSubmit">
         <div class="form-group">
           <label for="account">帳號</label>
+					<span class="symbol">@</span>
           <input
             type="text"
             id="account"

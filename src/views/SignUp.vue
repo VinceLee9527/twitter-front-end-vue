@@ -8,6 +8,7 @@
       <form action="post">
         <div class="form-group">
           <label for="account">帳號</label>
+					<span class="symbol">@</span>
           <input
             type="text"
             id="account"
