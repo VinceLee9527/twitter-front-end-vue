@@ -1,7 +1,6 @@
 <template>
   <div id="admin-main">
     <AdminNavBar />
-
     <div id="tweet-list">
       <AdminTopNav />
       <div class="container">

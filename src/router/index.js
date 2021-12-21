@@ -6,7 +6,6 @@ import UserMain from '../views/UserMain.vue'
 import NotFound from '../views/NotFound.vue'
 import AdminSignIn from '../views/AdminSignIn.vue'
 import store from '../store'
-// import usersAPI from './../apis/users'
 
 Vue.use(VueRouter)
 
@@ -14,7 +13,7 @@ const routes = [{
         path: '/',
         name: 'root',
         redirect: '/signin'
-    },     
+    },
     {
         path: '/signin',
         name: 'SignIn',
@@ -113,6 +112,7 @@ const router = new VueRouter({
     routes
 })
 
+//切換路由
 router.beforeEach(async(to, from, next) => {
     // 從 localStorage 取出 token
     const token = localStorage.getItem('token')

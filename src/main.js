@@ -9,17 +9,9 @@ import VueSocketIO from 'vue-socket.io'
 const token = localStorage.getItem('token')
 
 
-// const connection = io.connect('http://ce59-2001-b011-1005-5e71-545-8c13-cfec-99ff.ngrok.io',{
-//   auth: { token },
-
-//   auth: {token: store.state.token}
-// }
-// )
-
 Vue.use(new VueSocketIO({
     debug: true,
     connection: SocketIO('https://twitterapichatroom20211212.herokuapp.com', { auth: { token }, autoConnect: false }),
-    // options: {autoConnect: false},
     vuex: {
         store,
         actionPrefix: 'SOCKET_',

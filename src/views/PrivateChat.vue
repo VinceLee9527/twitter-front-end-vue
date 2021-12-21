@@ -16,7 +16,7 @@
       </div>
     </div>
     <div class="message-content">
-      <div class="title">{{ userChatting || '聊天對象'}}</div>
+      <div class="title">{{ userChatting || "聊天對象" }}</div>
       <div class="content">
         <ChatRoomMessage
           :contents="contents"
@@ -70,17 +70,17 @@ export default {
       this.$store.commit("updateReadMessage", data);
       console.log("not read", data);
     },
-		//有人發送private msg時，除了自己以外收到廣播
-		privateMessage() {
-			this.fetchLatest()
+    //有人發送private msg時，除了自己以外收到廣播
+    privateMessage() {
+      this.fetchLatest();
     },
   },
   methods: {
-    afterChatClick(id,userChatting) {
+    afterChatClick(id, userChatting) {
       this.$store.commit("setChatUser", id);
       this.joinRoom();
       this.fetchChatHistory(id);
-      this.userChatting = userChatting
+      this.userChatting = userChatting;
     },
     afterSendMessage(text) {
       this.$socket.emit("sendMessage", {
@@ -91,10 +91,8 @@ export default {
     },
     async fetchLatest() {
       const data = await chatAPI.getLatest();
-      console.log(data);
       this.latestMessages = data.data;
     },
-
     async fetchChatHistory(userId) {
       const data = await chatAPI.privateHistory({ userId });
       this.contents = data.data;
@@ -116,7 +114,6 @@ export default {
   },
   created() {
     const id = this.chatUserId;
-    console.log(id);
     this.fetchChatHistory(id);
     this.joinRoom();
     this.fetchLatest();
@@ -132,42 +129,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "../assets/styles/_variables.scss";
-.container {
-  display: flex;
-  .title-contianer {
-    @extend %page-title-style;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    img {
-      width: 22px;
-      height: 22px;
-    }
-  }
-  .user-list {
-    flex: 1;
-    overflow-y: scroll;
-    &::-webkit-scrollbar {
-      width: 3px;
-      background-color: transparent;
-      &-thumb {
-        border-radius: 10px;
-        background-color: $page-divider;
-      }
-    }
-  }
-  .message-content {
-    flex: 2;
-    border-left: 1px solid $page-divider;
-    .title {
-      @extend %page-title-style;
-    }
-    display: flex;
-    flex-direction: column;
-    .content {
-      flex: 1;
-    }
-  }
-}
+@import "../assets/styles/_privateChat.scss";
 </style>

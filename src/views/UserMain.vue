@@ -105,7 +105,6 @@ export default {
     //監聽showpostlist裡面按鈕
     async afterReplyModalClick(tweetId) {
       try {
-        console.log(tweetId);
         this.$store.commit("toggleReplyPostModal");
         const { data } = await tweetAPI.getTweet({ tweetId });
         this.modaltweet = data;
@@ -152,7 +151,6 @@ export default {
   sockets: {
     connect() {
       console.log("socket connected");
-      // this.socketConnect();
       this.$socket.emit("login");
     },
   },

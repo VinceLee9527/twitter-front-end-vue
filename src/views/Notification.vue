@@ -32,7 +32,6 @@ export default {
       followings: "",
     };
   },
-
 };
 
 </script>

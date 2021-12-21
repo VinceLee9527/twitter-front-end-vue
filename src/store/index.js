@@ -26,7 +26,6 @@ export default new Vuex.Store({
         chatUserId: -1,
         notReadMessages: ""
     },
-
     getters: {
         getCurrentUser: (state) => {
             return state.currentUser;
@@ -41,6 +40,7 @@ export default new Vuex.Store({
             return state.openReplyPostModal
         },
     },
+    //用來修改state的的方法
     mutations: {
         setCurrentUser(state, currentUser) {
             state.currentUser = {
@@ -54,6 +54,7 @@ export default new Vuex.Store({
         setChatUser(state, chatUserId) {
             state.chatUserId = chatUserId
         },
+        //log out
         revokeAuthentication(state) {
             state.currentUser = {};
             state.isAuthenticated = false;
@@ -85,6 +86,7 @@ export default new Vuex.Store({
             state.notReadMessages = number
         }
     },
+    //透過API請求資料
     actions: {
         async fetchCurrentUser({ commit }) {
             try {

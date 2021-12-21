@@ -120,7 +120,6 @@ export default {
           title: "新增回覆成功",
         });
         this.$store.commit("toggleReplyPostModal");
-        // this.$router.go(); //跳頁
         const { id } = this.$route.params;
         this.fetchReplies(id);
       } catch (error) {
