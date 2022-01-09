@@ -1,10 +1,30 @@
-# twitter-front-end (vue)
+# Simple Twitter Challenge
 
-## 專案網址:https://vincelee9527.github.io/twitter-front-end-vue/#/signin
+專案採前後端分離開發，前端使用 Vue.js/ Vuex，後端使用 Express.js
 
-[![Signin](https://i.ibb.co/yY2prnq/2021-12-10.png)](https://chacowang0125.github.io/simple-twitter-challenge/#/signin)
+## 專案網址:
+
+https://vincelee9527.github.io/twitter-front-end-vue/#/signin
+
+## 測試帳號
+
+- 使用者帳號：`user1`
+- 管理員帳號: `root`
+- 密碼：皆為`12345678`
+
+## Preview
+
+- 首頁
+![image](https://github.com/chacowang0125/simple-twitter-challenge/blob/challenge/public/index.png)
+- 個人主頁面
+![image](https://github.com/chacowang0125/simple-twitter-challenge/blob/challenge/public/personal.png)
+- 推文詳細頁
+![image](https://github.com/chacowang0125/simple-twitter-challenge/blob/challenge/public/tweet.png)
+- 公開聊天頁面
+![image](https://github.com/chacowang0125/simple-twitter-challenge/blob/challenge/public/chat.png)
 
 ## 功能
+
 - 前台與後台有不同的登入入口, 使用者只能使用前台功能，管理員只能使用後台功能
 - 使用者可以瀏覽所有tweets和該tweet的案讚數以及留言
 - 使用者可以發布新的tweet，並對現有的tweet進行回覆和like/unlike
@@ -16,13 +36,8 @@
 - 管理員可以看到所有使用者資料
 - 使用者可以在公開聊天室傳訊息給其他使用者
 
-## 測試帳號
-- 使用者帳號：`user1`
-- 管理員帳號: `root`
-- 密碼：皆為`12345678`
-
-## 專案啟動 (連heroku)
-### Project setup
+## 專案啟動
+### Project setup(連heroku)
 ```
 git clone https://github.com/chacowang0125/simple-twitter-challenge.git
 cd simple-twitter-challenge
